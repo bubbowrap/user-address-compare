@@ -5,9 +5,9 @@ export const fetchInterval = (func, delay, tries) => {
     const pause = (delay) =>  new Promise((resolve) => setTimeout(resolve, delay));
     let triesLeft = tries;
   
-    function onError(){
+    const onError = () => {
         triesLeft = tries - 1;
-        if(!triesLeft){
+        if (!triesLeft) {
             return;
         }
         return pause(delay).then(() => fetchInterval(func, delay, triesLeft));

@@ -69,16 +69,6 @@ Event = connect((state, ownProps) => {
 
 
 const handleCompareClick = (dispatch) => (e) => {
-  /*
-   * Your code here (and probably elsewhere)
-   *
-   *
-   * We've provided a thunk function to fetch
-   * event data.
-   * Find it in thunks.js, lines 81-107,
-   * and referenced in the comment below on line 78.
-   */
-
   dispatch(fetchSelectedEventDetails());
   dispatch({
     type: actions.COMPARE_SELECTED_EVENTS

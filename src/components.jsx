@@ -8,8 +8,6 @@ import { actions } from './redux-store'
 
 import ReactDiffViewer, { DiffMethod } from 'react-diff-viewer';
 
-import classes from './compareModal.module.css';
-
 //--> User select form
 const submitHandler = (dispatch, userId) => (e) => {
   e.preventDefault()
@@ -136,11 +134,11 @@ let CompareModal = ({dispatch, children}) => {
       <>
         {ReactDOM.createPortal(
           <>
-          <div className={classes.modalContent}>
-              <button className={classes.modalCloseBtn} onClick={handleCloseCompareClick(dispatch)}>x</button>
+          <div className="modalContent">
+              <button className="modalCloseBtn" onClick={handleCloseCompareClick(dispatch)}>x</button>
               {children}
           </div>
-          <div className={classes.modalBackdrop} onClick={handleCloseCompareClick(dispatch)}></div>
+          <div className="modalBackdrop" onClick={handleCloseCompareClick(dispatch)}></div>
           </>,
           document.getElementById('compareModal')
         )}

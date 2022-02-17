@@ -165,22 +165,19 @@ let App = ({ addresses, events, userIds, selectedUserId, selectedAddressId, comp
         ? <EventList events={events} />
         : <p>{selectedAddressId ? 'No events found.' : 'Select an address to see events'}</p>
       }
-    </div>
-    
-    <div>
-      { comparingEvents && comparisonJson
-        ? 
-        <CompareModal>
-          <ReactDiffViewer 
-            oldValue={JSON.stringify(comparisonJson[0], undefined, 4)}
-            newValue={JSON.stringify(comparisonJson[1], undefined, 4)}
-            compareMethod={DiffMethod.WORDS}
-            splitView={true} 
-          /> 
-        </CompareModal>
-        : '' 
-      }
-    </div>
+    </div>   
+    { comparingEvents && comparisonJson
+      ? 
+      <CompareModal>
+        <ReactDiffViewer 
+          oldValue={JSON.stringify(comparisonJson[0], undefined, 4)}
+          newValue={JSON.stringify(comparisonJson[1], undefined, 4)}
+          compareMethod={DiffMethod.WORDS}
+          splitView={true} 
+        /> 
+      </CompareModal>
+      : '' 
+    }
   </>
 }
 App = connect(state => {
